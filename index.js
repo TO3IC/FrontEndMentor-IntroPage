@@ -10,28 +10,70 @@ var companyOpen = false;
 var NavOpen = false;
 
 features.addEventListener("click", () => {
-  if (featureOpen === false) {
-    featureOpen = true;
-    features.innerHTML = `Features<svg width="20" height="6" xmlns="http://www.w3.org/2000/svg"><path stroke="#686868" stroke-width="1.5" fill="none" d="m1 5 4-4 4 4"/></svg>`;
-    featurebar.classList.add("active");
+  if (window.matchMedia("(max-width:768px)").matches) {
+    if (featureOpen === false) {
+      featureOpen = true;
+      features.innerHTML = `Features<svg width="20" height="6" xmlns="http://www.w3.org/2000/svg"><path stroke="#686868" stroke-width="1.5" fill="none" d="m1 5 4-4 4 4"/></svg>`;
+      featurebar.style.display = "flex";
+      setTimeout(() => {
+        featurebar.style.scale = 1;
+      }, 300);
+    } else {
+      features.innerHTML = `Features <svg width="20" height="6" xmlns="http://www.w3.org/2000/svg">
+      <path stroke="#686868" stroke-width="1.5" fill="none" d="m1 1 4 4 4-4" />
+      </svg>`;
+      featurebar.style.scale = "1 0";
+      setTimeout(() => {
+        featurebar.style.display = "none";
+      }, 350);
+
+      featureOpen = false;
+    }
   } else {
-    features.innerHTML = `Features <svg width="20" height="6" xmlns="http://www.w3.org/2000/svg">
+    if (featureOpen === false) {
+      featureOpen = true;
+      features.innerHTML = `Features<svg width="20" height="6" xmlns="http://www.w3.org/2000/svg"><path stroke="#686868" stroke-width="1.5" fill="none" d="m1 5 4-4 4 4"/></svg>`;
+      featurebar.classList.add("active");
+    } else {
+      features.innerHTML = `Features <svg width="20" height="6" xmlns="http://www.w3.org/2000/svg">
           <path stroke="#686868" stroke-width="1.5" fill="none" d="m1 1 4 4 4-4" />
         </svg>`;
-    featurebar.classList.remove("active");
-    featureOpen = false;
+      featurebar.classList.remove("active");
+      featureOpen = false;
+    }
   }
 });
 
 company.addEventListener("click", () => {
-  if (companyOpen === false) {
-    companyOpen = true;
-    company.innerHTML = `Company<svg width="20" height="6" xmlns="http://www.w3.org/2000/svg"><path stroke="#686868" stroke-width="1.5" fill="none" d="m1 5 4-4 4 4"/></svg>`;
-    companybar.classList.add("active");
+  if (window.matchMedia("(max-width:768px)").matches) {
+    if (companyOpen === false) {
+      companyOpen = true;
+      company.innerHTML = `Company<svg width="20" height="6" xmlns="http://www.w3.org/2000/svg"><path stroke="#686868" stroke-width="1.5" fill="none" d="m1 5 4-4 4 4"/></svg>`;
+      companybar.style.display = "flex";
+      setTimeout(() => {
+        companybar.style.scale = 1;
+      }, 300);
+    } else {
+      features.innerHTML = `Company <svg width="20" height="6" xmlns="http://www.w3.org/2000/svg">
+      <path stroke="#686868" stroke-width="1.5" fill="none" d="m1 1 4 4 4-4" />
+      </svg>`;
+      companybar.style.scale = "1 0";
+      setTimeout(() => {
+        companybar.style.display = "none";
+      }, 350);
+
+      companyOpen = false;
+    }
   } else {
-    company.innerHTML = `Company<svg width="20" height="6" xmlns="http://www.w3.org/2000/svg"><path stroke="#686868" stroke-width="1.5" fill="none" d="m1 1 4 4 4-4" /></svg>`;
-    companybar.classList.remove("active");
-    companyOpen = false;
+    if (companyOpen === false) {
+      companyOpen = true;
+      company.innerHTML = `Company<svg width="20" height="6" xmlns="http://www.w3.org/2000/svg"><path stroke="#686868" stroke-width="1.5" fill="none" d="m1 5 4-4 4 4"/></svg>`;
+      companybar.classList.add("active");
+    } else {
+      company.innerHTML = `Company<svg width="20" height="6" xmlns="http://www.w3.org/2000/svg"><path stroke="#686868" stroke-width="1.5" fill="none" d="m1 1 4 4 4-4" /></svg>`;
+      companybar.classList.remove("active");
+      companyOpen = false;
+    }
   }
 });
 
