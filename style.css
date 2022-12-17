@@ -13,9 +13,8 @@
 .navbar {
       display: flex;
       align-items: center;
-      justify-content: space-evenly;
+      justify-content: center;
       width: 100%;
-      gap: 30%;
       height: 70px;
       position: fixed;
       z-index: 999;
@@ -48,6 +47,7 @@
 .logo {
       font-size: 1.3rem;
       color: black;
+      margin-right: 20%;
 }
 
 .login {
@@ -119,11 +119,6 @@
       color: var(--AlmostBlack);
 }
 
-.features-active {
-      pointer-events: all;
-      opacity: 1;
-      translate: 0 0%;
-}
 
 .hero {
       display: flex;
@@ -183,4 +178,233 @@
       align-items: center;
       justify-content: left;
       gap: 20px;
+}
+
+.company-bar {
+      position: fixed;
+      display: flex;
+      opacity: 0;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: white;
+      padding: 20px 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.15);
+      gap: 20px;
+      top: 8%;
+      left: 23%;
+      translate: 0 -100%;
+      pointer-events: none;
+      transition: all 0.5s ease;
+}
+
+.company-item {
+      color: var(--MediumGray);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+}
+
+.company-item:hover {
+      color: var(--AlmostBlack);
+}
+
+.active {
+      pointer-events: all;
+      opacity: 1;
+      translate: 0 0%;
+}
+
+.hamburger {
+      display: none;
+}
+
+.div {
+      display: flex;
+      gap: 30%;
+      align-items: center;
+      justify-content: center;
+      translate: -30% 0;
+}
+
+
+
+
+@media (max-width:768px) {
+      .hero {
+            flex-direction: column;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            width: 100%;
+            height: 100vh;
+      }
+
+      .heroimg {
+            position: absolute;
+            top: 10%;
+            right: 0%;
+
+      }
+
+      .text {
+            display: flex;
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+
+      }
+
+      .hero-h1 {
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+      }
+
+      .hero-p {
+            margin-bottom: 20px;
+      }
+
+      .learn {
+            margin-bottom: 0;
+      }
+
+      .logos {
+            gap: 15px;
+            scale: .9;
+            translate: 0 40px;
+      }
+
+      .navlinks {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            right: 0;
+            width: 70%;
+            height: 100vh;
+            gap: 3%;
+            background: white;
+            justify-content: flex-start;
+            transition: all 0.3s ease;
+            translate: 50vh 0;
+            align-items: flex-start;
+            padding-left: 30px;
+      }
+
+      .navlink {
+            display: flex;
+            align-items: center;
+            color: var(--MediumGray);
+            justify-content: center;
+            transition: all 0.3s cubic-bezier(.08, .71, .41, .33);
+            gap: 5%;
+      }
+
+      .sideBtns {
+            flex-direction: column;
+            translate: 0;
+            gap: 20px;
+            width: 100%;
+      }
+
+      .register {
+            display: flex;
+            width: 70%;
+            align-items: center;
+            justify-content: center;
+      }
+
+      .hamburger {
+            display: flex;
+            width: 35px;
+            height: 3px;
+            translate: 960% -200%;
+            background: #000;
+            align-content: center;
+            justify-content: center;
+            border-radius: 10000px;
+            position: relative;
+            z-index: 999;
+            cursor: pointer;
+      }
+
+      .hamburger::after,
+      .hamburger::before {
+            content: "";
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            width: 200%;
+            height: 3px;
+            translate: 0 10px;
+            background: #000;
+            border-radius: 10000px;
+      }
+
+      .hamburger::before {
+            translate: 0 -10px;
+      }
+
+      .navbar {
+            justify-content: flex-start;
+
+      }
+
+      .logo {
+            display: flex;
+            margin-left: 20px;
+      }
+
+      .div {
+            display: block;
+            gap: 0;
+            width: 100%;
+            translate: 0% 0;
+
+      }
+
+      .hamburger-close {
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            width: 35px;
+            height: 3px;
+
+            position: absolute;
+            background: none;
+            align-content: center;
+            justify-content: center;
+            border-radius: 10000px;
+            z-index: 1000;
+      }
+
+      .hamburger-close::before,
+      .hamburger-close::after {
+            content: "";
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            translate: 220px -15px;
+            background: #000;
+            border-radius: 10000px;
+            transform-origin: center;
+      }
+
+      .hamburger-close::before {
+            rotate: 45deg;
+      }
+
+      .hamburger-close::after {
+            rotate: -45deg;
+      }
+
 }
